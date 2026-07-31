@@ -1,0 +1,81 @@
+{
+    "name": "aaronkatema/laravel-smilepay",
+    "description": "Laravel SDK for the ZB Bank Smile&Pay payment gateway (Zimbabwe) — EcoCash, InnBucks, O'mari, SmileCash and card payments with polling, webhooks, refunds and a full transaction audit trail.",
+    "keywords": [
+        "laravel",
+        "zimbabwe",
+        "payments",
+        "payment-gateway",
+        "smilepay",
+        "smileandpay",
+        "zb-bank",
+        "ecocash",
+        "innbucks",
+        "omari",
+        "smilecash"
+    ],
+    "homepage": "https://github.com/aaronkatema/laravel-smilepay",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aaron Gibson Katema",
+            "email": "aaronkatema@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/config": "^11.0|^12.0|^13.0",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/contracts": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/events": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/routing": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.9|^3.0",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+        "phpstan/phpstan": "^1.11|^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AaronKatema\\SmilePay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AaronKatema\\SmilePay\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AaronKatema\\SmilePay\\SmilePayServiceProvider"
+            ],
+            "aliases": {
+                "SmilePay": "AaronKatema\\SmilePay\\Facades\\SmilePay"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
